@@ -1,0 +1,20 @@
+# Stage 7: AI Features
+
+From the launch readiness guide at https://ducktate.com/learn/launch-readiness/ (checked 2026-10-09). Not legal advice. Each item is tagged [Must do], [Should do] or [If it applies] and lists its sources.
+
+**In a Lovable project:** Features built on the Lovable AI gateway still send user content to an outside model provider. Name that in the privacy policy and, for chat features, show the AI notice in the UI.
+
+## Checklist
+
+- [ ] Write down which kinds of AI feature your app has: chat, companion, generator, decision tool, or data sent to an AI company. [Must do] Sources: EU AI Act Article 50 (mirror) (https://artificialintelligenceact.eu/article/50/), California SB 243 text (https://www.sidley.com/en/-/media/resource-pages/ai-monitor/laws-and-regulations/cal-sb243-companion-chatbots.pdf?la=en), Colorado SB 26-189 (https://leg.colorado.gov/bills/sb26-189)
+- [ ] Show a plain "you are chatting with an AI, not a person" notice at the start of every chat session. [Must do] Sources: EU AI Act Article 50 (mirror) (https://artificialintelligenceact.eu/article/50/), Utah SB 226 (https://le.utah.gov/Session/2025/bills/enrolled/SB0226.pdf), Anthropic Usage Policy (https://www.anthropic.com/legal/aup)
+- [ ] Never give a bot a human name or photo without an AI label, and never let it deny being an AI when asked. [Must do] Sources: Utah SB 226 (https://le.utah.gov/Session/2025/bills/enrolled/SB0226.pdf), BOT Act summary (https://www.dwt.com/blogs/artificial-intelligence-law-advisor/2019/07/is-there-anybody-behind-that-bot)
+- [ ] If your app is on the App Store, name the outside AI company and get explicit permission with a clear button before you send it user data. [If it applies] Sources: Apple App Review Guidelines 5.1.2(i) (https://developer.apple.com/app-store/review/guidelines/)
+- [ ] If your app generates images, audio, video or text, ask your model vendor in writing how outputs are marked, and check your app does not strip the mark. [If it applies] Sources: Cuatrecasas on the Omnibus dates (https://www.cuatrecasas.com/en/spain/intellectual-property/art/digital-omnibus-ai-has-been-published), EU AI Act Article 50 (mirror) (https://artificialintelligenceact.eu/article/50/)
+- [ ] If you publish deepfakes or AI-written public-interest text, label them as AI-made. [If it applies] Sources: EU AI Act Article 50 (mirror) (https://artificialintelligenceact.eu/article/50/)
+- [ ] If your bot is a companion chatbot with California users, add the AI notice, a published self-harm protocol with a crisis-line referral, the minors notice, and three-hour break reminders for known minors. [If it applies] Sources: California SB 243 text (https://www.sidley.com/en/-/media/resource-pages/ai-monitor/laws-and-regulations/cal-sb243-companion-chatbots.pdf?la=en)
+- [ ] If your bot is support or productivity only, write one paragraph on why it is not a companion chatbot and keep it with your launch notes. [Should do] Sources: California SB 243 text (https://www.sidley.com/en/-/media/resource-pages/ai-monitor/laws-and-regulations/cal-sb243-companion-chatbots.pdf?la=en)
+- [ ] Remove any AI claim from your site and app store page that you cannot prove with a test you kept. [Must do] Sources: FTC Operation AI Comply (https://www.ftc.gov/news-events/news/press-releases/2024/09/ftc-announces-crackdown-deceptive-ai-claims-schemes)
+- [ ] Read the usage policy of every AI model provider you use on launch day, and note its rules on advice, high-risk uses and minors. [Must do] Sources: Anthropic Usage Policy (https://www.anthropic.com/legal/aup), OpenAI usage policies (https://openai.com/policies/usage-policies/)
+- [ ] If your AI helps decide hiring, lending, housing, insurance, health care, education or benefits, plan Colorado notices and documentation for 2027. [If it applies] Sources: Colorado SB 26-189 (https://leg.colorado.gov/bills/sb26-189)
+- [ ] If you work in a licensed field in Utah and your AI collects health, financial or biometric data or gives advice, disclose the AI before the chat starts. [If it applies] Sources: Utah SB 226 (https://le.utah.gov/Session/2025/bills/enrolled/SB0226.pdf)
