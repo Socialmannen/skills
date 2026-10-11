@@ -59,6 +59,10 @@ function parseFrontmatter(text, file) {
     let value = m[2].trim();
     if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
       value = value.slice(1, -1);
+    } else if (/: | #|^[`"'{\[&*!|>%@,?-]/.test(value)) {
+      // Unquoted YAML values cannot contain ": " or " #" or start with an indicator character.
+      // Installers silently skip skills whose frontmatter is not valid YAML.
+      err(file, `'${m[1]}' is not valid unquoted YAML (contains ": ", " #" or starts with a special character); rephrase or quote it`);
     }
     data[m[1]] = value;
   }

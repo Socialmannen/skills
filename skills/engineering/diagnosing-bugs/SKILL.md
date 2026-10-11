@@ -1,6 +1,6 @@
 ---
 name: diagnosing-bugs
-description: Disciplined diagnosis loop for hard bugs and performance regressions in a Lovable app: blank or broken preview, React runtime crashes, failing network calls, server or edge function errors, Lovable Cloud (Supabase) errors, RLS returning empty data, works-in-preview-but-not-published. Use when the user says "debug this", "diagnose", "it's broken", "nothing happens", "white screen", "error", "slow", or when a quick fix has already failed once.
+description: Disciplined diagnosis loop for hard bugs and performance regressions in a Lovable app, such as a blank or broken preview, React runtime crashes, failing network calls, server or edge function errors, Lovable Cloud (Supabase) errors, RLS returning empty data, or works-in-preview-but-not-published. Use when the user says "debug this", "diagnose", "it's broken", "nothing happens", "white screen", "error", "slow", or when a quick fix has already failed once.
 ---
 
 # Diagnosing Bugs
