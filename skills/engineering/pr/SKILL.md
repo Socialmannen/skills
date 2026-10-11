@@ -88,4 +88,4 @@ Show only the parts needed to understand the change. One or two views usually su
 
 Return the PR body in one copyable markdown block. If the GitHub connector is linked to the project and the user asks, create or update the PR through the GitHub API with this body.
 
-Credits: the template is adapted from Dex Horthy's `show-me` skill (HumanLayer).
+Credits: the template is adapted from the show-me skill by Dex Horthy (HumanLayer, https://github.com/humanlayer/skills).
