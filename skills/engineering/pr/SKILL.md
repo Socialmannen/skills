@@ -1,170 +1,91 @@
 ---
 name: pr
-description: "Use when writing a PR body."
-metadata:
-  credits:
-    skill: show-me
-    author: Dex Horthy
-    organisation: Humanlayer
-    url: "https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md"
+description: Write a clear pull request description for changes in a Lovable project synced to GitHub, with a visual summary, before/after evidence (preview screenshots, test runs) and merge risk. Use when the user asks for a PR description, PR body, "write up this branch", "summarise the changes for review", or is about to merge a branch created through Lovable's GitHub sync.
 ---
 
-Use this template for writing the PR body:
+# Pull Request Description
+
+Lovable syncs every change to the connected GitHub repository, and branches can be switched from the editor. This skill writes the body for a PR from such a branch into the default branch.
+
+## Gather the change
+
+Use read-only git: `git log --oneline <base>..HEAD`, `git diff <base>...HEAD --stat` and the relevant hunks, where `<base>` is the default branch or the commit the user names. Never run stateful git commands. Read the spec or plan the work came from (`docs/specs/`, `roadmap.md`, `.lovable/plan/`) for the "why".
+
+## Template
 
 ```markdown
 ## Summary
 
-<diagram, diff-sketch, or tree>
+<diagram, diff-sketch or tree>
 
 ## Evidence
 
-- **Before:** <screenshot/output/failing test run>
-  **After:** <screenshot/output/passing test run>
+- **Before:** <screenshot / output / failing test>
+  **After:** <screenshot / output / passing test>
 
 ## Merge Danger
 
 **Door:** <one-way or two-way>
 
-<optional: description>
+<optional: why>
 
-**Blast Radius:** <one-word description>
+**Blast Radius:** <one word>
 
-<optional: potential ramifications of merge>
+<optional: what could be affected>
 ```
 
-## Sections
+Skip preambles and keep prose short. Use the domain words from `GLOSSARY.md`.
 
-Skip all preambles and keep prose brief. Use the user's domain language from `GLOSSARY.md`.
+## Summary
 
-### Summary
+Pick the smallest view that makes the point:
 
-Pick the smallest view that makes the key point clear.
-
-- Show logic or an algorithm as pseudocode:
-
-```text
-on(save)
-  if content is unchanged
-    return cached result
-  write new content
-  return fresh result
-```
-
-- Show runtime control flow as a call tree:
-
-```text
-submitForm
-  createSession
-    persistPrompt
-    launchAgent
-  navigateToSession
-```
-
-- Show UI structure as a component tree, including state and module boundaries that matter:
-
-```text
-<SessionPage> (apps/example/src/routes/session.tsx)
-  useSessionEvents()
-  <SessionToolbar>
-    <RunSkillButton> (packages/ui)
-```
-
-- Show file responsibility or a broad refactor as a shallow file tree:
-
-```text
-src/
-├── commands/       # parses user actions
-├── sessions/       # owns session state
-└── transport/      # sends API requests
-```
-
-- Show component interaction, control flow, or data flow with Mermaid:
-
-```mermaid
-sequenceDiagram
-    participant User
-    participant UI
-    participant Daemon
-    User->>UI: choose command
-    UI->>Daemon: send expanded prompt
-    Daemon-->>UI: stream result
-```
-
-- Use `diff` when the point is what changes and the surrounding shape already exists. Match the diff shape to the topic.
-
-For a component change:
+- **Component tree** for UI changes, with the route file and the state or data hooks that matter:
 
 ```diff
- <SessionPage>
-   useSessionEvents()
-   <SessionToolbar>
-+    <RunSkillButton />
-   <SessionTimeline>
-+    <SkillResultCard />
+ <BookingPage> (src/routes/bookings.$id.tsx)
+   useBooking(id)
+   <BookingHeader>
++    <RescheduleButton />
+   <BookingTimeline>
++    <RescheduleEvent />
 ```
 
-For a file-layout change:
+- **Call tree** for runtime flow:
+
+```text
+submitBooking (UI)
+  createBooking (server function)
+    validate input
+    insert booking (RLS: customer owns row)
+    sendConfirmationEmail
+  navigate to /bookings/$id
+```
+
+- **Schema diff** for database changes, including RLS:
 
 ```diff
- src/
- ├── commands/
-+│   └── show-me.ts       # expands the slash command
- ├── sessions/
--└── transport.ts
-+└── transport/
-+    ├── client.ts
-+    └── stream.ts
+ bookings
++  rescheduled_from uuid references bookings
++  policy "customer can reschedule own booking" for update
 ```
 
-For a call-tree or call-stack change:
+- **File tree** for broad refactors, **pseudocode** for algorithms, **Mermaid** for interactions between UI, server and external services.
 
-```diff
- submitForm
-   createSession
-     persistPrompt
-+    expandSkillMention
-     launchAgent
--  navigateToSession
-+  navigateToSession
-+    subscribeToEvents
-```
+Show only the parts needed to understand the change. One or two views usually suffice.
 
-For a state or control-flow change:
+## Evidence
 
-```diff
- on(save)
--  write content
-+  if content is unchanged
-+    return cached result
-+  write new content
-+  invalidate cache
-```
+- **Screenshots are best** for visual changes: capture before and after from the preview with Playwright at the same viewport, and reference them in the PR (the user can drag them into GitHub, or they can be committed under `docs/pr/` if the user wants them in the repo).
+- **Execution evidence** is next best: the test that failed before and passes now, or the SQL probe showing the second user can no longer read the row.
 
-- Show the whole block when most of it is new, when omitted context would hide ownership or order, or when the user needs a copyable target shape:
+## Merge Danger
 
-```ts
-function expandSkill(command: string): string {
-  const skillName = command.slice(1);
-  return `use the ${skillName} skill`;
-}
-```
+- **Door**: two-way if it can be rolled back cheaply (UI, additive code); one-way if it is destructive or hard to reverse (dropping columns, data migrations, changing auth or payment behaviour, sending emails to users).
+- **Blast radius**: what could break beyond the feature: other pages using a changed module, existing rows under a new constraint, mobile layout, published users mid-session.
 
-#### Guidance
+## Delivering it
 
-Place each visual next to the short text it supports. Keep only the calls, files, props, states, and boundaries needed to answer the user's current question or the options to resolve the current discussion point.
+Return the PR body in one copyable markdown block. If the GitHub connector is linked to the project and the user asks, create or update the PR through the GitHub API with this body.
 
-You may use one of these, you may use several, it is unlikely you will use all of them. Use your judgement and don't overwhelm the user.
-
-### Evidence
-
-Concrete evidence that the change works. Show a before and after.
-
-Screenshots are S-tier - when the environment is set up for it and the change is visual.
-
-Execution-based evidence is A-tier. Test results, console output. Show the exact test that now fails and passes, using pseudocode.
-
-### Merge Danger
-
-Describe whether it's a one-way or two-way door. You can walk back through two-way doors, but not one-way doors. A PR that is cheap to roll back is lower risk. Changes that involve destructive actions or hard-to-reverse decisions are one-way doors.
-
-The blast radius is the potential impact or scope of the changes introduced by this PR. Consider all possibilities. Examples are layout shift, breakages for consumers, mobile responsiveness, etc.
+Credits: the template is adapted from Dex Horthy's `show-me` skill (HumanLayer).
