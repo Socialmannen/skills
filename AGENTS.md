@@ -1,2 +1,0 @@
-# Agents
-See CLAUDE.md
