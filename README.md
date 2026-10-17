@@ -1,6 +1,6 @@
 # Skills for Lovable
 
-Fourteen focused agent skills for building real apps in [Lovable](https://lovable.dev): React and TypeScript, Tailwind and shadcn, Lovable Cloud (database, auth, storage), server functions and GitHub sync.
+Fifteen focused agent skills for building real apps in [Lovable](https://lovable.dev): React and TypeScript, Tailwind and shadcn, Lovable Cloud (database, auth, storage), server functions and GitHub sync.
 
 They are a Lovable edition of [Matt Pocock's skills](https://github.com/mattpocock/skills): the engineering discipline is kept (grilling, specs, TDD, deep modules, two-axis code review, a real debugging loop), and everything that only made sense in a terminal agent is gone. Every skill now speaks Lovable: the preview and its logs, migrations and Row Level Security, `AGENTS.md` and project memory, `roadmap.md`, plan mode, Playwright checks against the preview, and the platform's security scan.
 
@@ -54,6 +54,7 @@ npx skills add Socialmannen/skills@tdd
 | [to-spec](skills/productivity/to-spec/SKILL.md) | Turns the conversation into a spec in `docs/specs/` and tracer-bullet slices in `roadmap.md`. | "Write a spec", "break this into tasks" |
 | [to-questionnaire](skills/productivity/to-questionnaire/SKILL.md) | Turns what you cannot answer alone into a questionnaire for a client or expert, saved as a shareable file. | "What should I ask my client?" |
 | [llm-council](skills/productivity/llm-council/SKILL.md) | Five independent advisors, blind peer review and a chairman verdict for decisions with real stakes. | "Council this", "should we pick X or Y?" |
+| [deepen-prompt](skills/productivity/deepen-prompt/SKILL.md) | Rewrites a prompt into a deeper (not bigger) version: what a top professional would do, the rawest source material, concrete methods and tools, and what proves the result right. | "Improve this prompt", "rewrite my prompt deeper" |
 
 ## How they fit together
 
@@ -72,7 +73,7 @@ before launch:    security-review ──> launch-checklist
 
 ## What changed from the original
 
-The original collection had 60 skills written for terminal agents (Claude Code, Codex, Copilot CLI). This edition keeps the 14 that matter for building web apps in Lovable, merges overlapping ones (`implement` + `implement-spec`, `to-spec` + `to-tickets`, 19 Mantis micro-skills into `security-review`, `improve-codebase-architecture` into `codebase-design`), and removes CLI plugins, local issue-tracker setup, git hooks and personal experiments. See [CHANGELOG.md](CHANGELOG.md) for the full list. The untouched original is preserved on the `backup/original` branch.
+The original collection had 60 skills written for terminal agents (Claude Code, Codex, Copilot CLI). This edition keeps the 14 that matter for building web apps in Lovable, adds one new skill (`deepen-prompt`), merges overlapping ones (`implement` + `implement-spec`, `to-spec` + `to-tickets`, 19 Mantis micro-skills into `security-review`, `improve-codebase-architecture` into `codebase-design`), and removes CLI plugins, local issue-tracker setup, git hooks and personal experiments. See [CHANGELOG.md](CHANGELOG.md) for the full list. The untouched original is preserved on the `backup/original` branch.
 
 ## Contributing
 
@@ -84,4 +85,4 @@ node scripts/validate-skills.mjs
 
 ## Credits and license
 
-Based on [mattpocock/skills](https://github.com/mattpocock/skills) by Matt Pocock (MIT). The PR template is adapted from the show-me skill by Dex Horthy ([HumanLayer](https://github.com/humanlayer/skills)); the launch checklist draws on the [launch readiness guide](https://ducktate.com/learn/launch-readiness/); the false-positive rules in `security-review` are adapted from Google's Mantis framework. Released under the [MIT License](LICENSE).
+Based on [mattpocock/skills](https://github.com/mattpocock/skills) by Matt Pockck (MIT). The PR template is adapted from the show-me skill by Dex Horthy ([HumanLayer](https://github.com/humanlayer/skills)); the launch checklist draws on the [launch readiness guide](https://ducktate.com/learn/launch-readiness/); the false-positive rules in `security-review` are adapted from Google's Mantis framework. Released under the [MIT License](LICENSE).
