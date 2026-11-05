@@ -10,6 +10,6 @@ Day-to-day building in a Lovable app.
 - [prototype](prototype/SKILL.md): throwaway UI variants or logic demos in the preview.
 - [tdd](tdd/SKILL.md): red-green loop with Vitest and Testing Library.
 - [pr](pr/SKILL.md): pull request descriptions for GitHub-synced branches.
-- [mobile-native](mobile-native/SKILL.md): platform and CSS fixes that make web apps feel native on phones (touch, viewport, safe areas).
+- [mobile-native](mobile-native/SKILL.md): platform and CSS fixes that make web apps feel native on phones (touch, viewport, safe areas, hidden scrollbars).
 - [break-ui](break-ui/SKILL.md): stress-test UI components with realistic worst-case data to catch overflow and edge-case bugs.
 - [ui-motion](ui-motion/SKILL.md): purposeful animations, choreography, GPU performance and motion audits.
