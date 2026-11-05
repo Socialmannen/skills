@@ -49,6 +49,12 @@ npx skills add Socialmannen/skills@tdd
 | [security-review](skills/security/security-review/SKILL.md) | Maps the attack surface, hunts real vulnerabilities (RLS, IDOR, secrets, webhooks, XSS, prompt injection), proves each with a probe and fixes it. | "Security review", "can users see each other's data?" |
 | [launch-checklist](skills/security/launch-checklist/SKILL.md) | Launch audit: data lockdown, publishing and domains, then privacy, consent, accessibility, AI, payments and email rules, with sources. | "Are we ready to launch?", "pre-launch audit" |
 
+### SEO
+
+| Skill | What it does | Say something like |
+| --- | --- | --- |
+| [seo](skills/seo/seo/SKILL.md) | Complete SEO for Google and AI search: starts with Lovable's SEO review, then indexability, metadata, structured data, Core Web Vitals, AI citation readiness (llms.txt, Google Preferred Sources) and a verifying re-scan. | "Optimize SEO", "show up in AI Overviews", "synas på Google" |
+
 ### Productivity
 
 | Skill | What it does | Say something like |

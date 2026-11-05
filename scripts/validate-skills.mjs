@@ -7,7 +7,7 @@ import { join, dirname, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const BUCKETS = ["engineering", "security", "productivity"];
+const BUCKETS = ["engineering", "security", "seo", "productivity"];
 const ALLOWED_SUBDIRS = new Set(["references", "scripts", "assets"]);
 const ALLOWED_KEYS = new Set(["name", "description"]);
 const NAME_RE = /^[a-z][a-z0-9-]{0,62}[a-z0-9]$/;
