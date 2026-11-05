@@ -1,6 +1,6 @@
 ---
 name: mobile-native
-description: Make a Lovable web app feel native on mobile devices — fixes for sticky hover states, tap highlight flashes, the 100vh bug, inputs zooming the viewport, laggy taps, pull-to-refresh hijacking scroll, safe areas, and touch targets. Use when optimizing web apps for mobile, building sheets and drawers, or when something feels like a website on a phone.
+description: Make a Lovable web app feel native on mobile devices — fixes for sticky hover states, tap highlight flashes, the 100vh bug, inputs zooming the viewport, laggy taps, pull-to-refresh hijacking scroll, safe areas, hidden mobile scrollbars, and touch targets. Use when optimizing web apps for mobile, building sheets and drawers, hiding scrollbars on phones, or when something feels like a website on a phone.
 ---
 
 # Feeling Native On Mobile
@@ -19,6 +19,7 @@ The user's mobile screen is the ground truth. Desktop emulation does not faithfu
 2. **Never disable viewport zoom**: Do not set `user-scalable=no` or `maximum-scale=1` in viewport meta (WCAG accessibility failure). Fix input font sizes instead.
 3. **Touch and pointer coexistence**: Tablets with keyboards, laptops with touchscreens, and phones with mice are common. Write for capabilities, not hardcoded form factors.
 4. **CSS over JavaScript**: Viewport height, tap highlights, and hover gates are solved with single CSS declarations or Tailwind utilities, not heavy hooks.
+5. **No visible scrollbars on touch**: Users scroll with finger gestures, not scrollbars. Hide scrollbars on mobile while keeping smooth touch scrolling intact.
 
 ---
 
@@ -35,6 +36,7 @@ The user's mobile screen is the ground truth. Desktop emulation does not faithfu
 | **Bottom nav clipped by home bar** | Missing safe area insets | `pb-[env(safe-area-inset-bottom)]` + `viewport-fit=cover` |
 | **Long-press selects button label** | Browser treats hold as text selection | `user-select: none` (`select-none`) on buttons/chips |
 | **Tiny touch targets** | Element is smaller than human finger pad | Minimum 44x44px (`min-h-11 min-w-11` or padded container) |
+| **Visible scrollbar on phone** | Mobile users scroll with touch gestures; visible scrollbars feel like an unpolished desktop site | Hide scrollbars on touch devices with `scrollbar-width: none` and `::-webkit-scrollbar { display: none; }` |
 
 ---
 
@@ -119,3 +121,34 @@ Prevent holding an interactive button or card from triggering text selection:
 
 ### 9. Minimum Touch Targets
 Every tap target must be at least 44x44 CSS pixels (iOS Human Interface Guidelines) or 48x48 pixels (Material / WCAG 2.5.5). For small icons, increase the hit target with transparent padding or an invisible wrapper rather than scaling the icon itself.
+
+### 10. Hide Scrollbars on Mobile
+Mobile users scroll with touch gestures; a visible vertical scrollbar breaks the app feel and clutters small screens. Hide scrollbars on touch devices while preserving full scrollability:
+
+**Global CSS Fix (`src/styles.css`):**
+```css
+/* Hide scrollbar on touch screens while keeping scroll intact */
+@media (pointer: coarse) {
+  html, body, .scroll-container {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  .scroll-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, WebKit */
+  }
+}
+```
+
+Or as a utility in `src/styles.css`:
+```css
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+```
+*Note: Gating with `@media (pointer: coarse)` keeps scrollbars accessible for desktop mouse users while giving phones and tablets a clean native feel.*
