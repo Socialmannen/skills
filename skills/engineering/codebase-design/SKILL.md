@@ -55,5 +55,6 @@ Where seams naturally live in a Lovable app:
 - When deepening a cluster of modules, classify its dependencies first: see [references/deepening.md](references/deepening.md). Read it before proposing a refactor that crosses the data or server seam.
 - When the shape of an interface is genuinely uncertain, explore alternatives: see [references/design-it-twice.md](references/design-it-twice.md).
 - When the user asks for an architecture review of the whole app or a feature, follow [references/architecture-review.md](references/architecture-review.md).
+- When picking third-party UI primitives, motion tools, or interaction utilities, consult [references/recommended-libraries.md](references/recommended-libraries.md).
 - Use the project's domain words from `GLOSSARY.md` (see the `domain-modeling` skill) when naming modules: "the Booking data module", not "the BookingService".
 - Record a seam decision that is hard to reverse as one rule with a one-line why in `AGENTS.md`, so later turns do not undo it.
