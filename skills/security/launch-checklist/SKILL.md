@@ -58,6 +58,16 @@ Read a reference only when its stage applies:
 - [ ] Custom domain connected (if used), and the auth site URL and redirect URLs include the published and custom domains, so sign-up confirmation and password reset links land on the live app. Test both flows on the published URL. [Must do]
 - [ ] Publish visibility and the Lovable badge are set as the user intends. [Should do]
 - [ ] The main flows work on the published app on a phone-width viewport and a desktop viewport, signed out and signed in. [Must do]
+- [ ] Cumulative Layout Shift (CLS) is under 0.1: all images, iframes, banners, and dynamic cards have explicit `width`/`height` or CSS `aspect-ratio` so layout does not shift during loading. [Must do] Sources: Web.dev CLS (https://web.dev/cls/)
+- [ ] Largest Contentful Paint (LCP) is under 2.5s on mobile (simulated 4G): hero image or largest above-the-fold element is compressed (WebP/AVIF), loaded with `fetchpriority="high"`, and not blocked by heavy scripts; below-the-fold images use `loading="lazy"`. [Must do] Sources: Web.dev LCP (https://web.dev/lcp/)
+- [ ] Total network payload on initial load does not exceed 1.5–2 MB: initial HTML and JSON do not embed megabytes of unpaginated data, and media is compressed aggressively. [Must do] Sources: Web.dev Total Byte Weight (https://web.dev/total-byte-weight/)
+- [ ] Zero unhandled console errors in production: initial page load and primary user flows run without uncaught JavaScript errors, 404 resources, or unhandled promise rejections in the browser console. [Must do] Sources: Lighthouse Browser Errors (https://developer.chrome.com/docs/lighthouse/best-practices/errors-in-console)
+- [ ] Fonts and stylesheets do not block rendering: external fonts load with `preconnect` and `font-display: swap`, and render-blocking CSS/JS is minimized. [Should do] Sources: Web.dev Render-blocking resources (https://web.dev/render-blocking-resources/)
+- [ ] Static assets have effective cache headers: images, fonts, and hashed bundles are served with `Cache-Control: public, max-age=31536000, immutable`. [Should do] Sources: Web.dev Cache Control (https://web.dev/uses-long-cache-ttl/)
+- [ ] Mobile touch targets meet at least 48x48 px (or 44x44 CSS px) with sufficient spacing: buttons, tags, icon links, and list items do not crowd together causing mis-taps. [Must do] Sources: WCAG 2.5.8 Target Size (https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html)
+- [ ] Strict semantisk heading hierarchy: the page has exactly one `<h1>` and never skips levels (e.g. `<h1>` followed directly by `< h3>` without an `<h2>`); headings are used for structure, not visual sizing. [Must do] Sources: Axe Heading Order (https://dequeuniversity.com/rules/axe/4.4/heading-order)
+- [ ] All links and interaktive elements have descriptive text: no empty `<a>` tags around icons without an `aria-label`, and no generic "Read more" or "Click here" without accessible context. [Must do] Sources: Web.dev Link Text (https://web.dev/link-text/)
+- [ ] Detailed performance guidelines and thresholds are followed: see [references/frontend-performance.md](references/frontend-performance.md). [Should do]
 - [ ] Large images are compressed and sized; nothing above the fold loads megabytes. [Should do]
 - [ ] Payments (if any) run in live mode only after a full test-mode purchase, webhook delivery and refund have been verified end to end. [Must do]
 - [ ] Contact or support details are visible somewhere a user can find them. [Should do]
@@ -83,8 +93,7 @@ Stages run: <list>; skipped: <list with reason>
 ## Must fix before launch
 1. [FAIL] <item>: <evidence> → <fix or who must do it>
 
-## Should fix soon
-1. ...
+## Should fix soon;1. ...
 
 ## Unknown (needs the user)
 1. [UNKNOWN] <item>: <what is needed to decide>
