@@ -1,6 +1,6 @@
 # Skills for Lovable
 
-Eighteen focused agent skills for building real apps in [Lovable](https://lovable.dev): React and TypeScript, Tailwind and shadcn, Lovable Cloud (database, auth, storage), server functions and GitHub sync.
+Twenty-three focused agent skills for building real apps in [Lovable](https://lovable.dev): React and TypeScript, Tailwind and shadcn, Lovable Cloud (database, auth, storage), server functions and GitHub sync.
 
 They are a Lovable edition of [Matt Pocock's skills](https://github.com/mattpocock/skills): the engineering discipline is kept (grilling, specs, TDD, deep modules, two-axis code review, a real debugging loop), and everything that only made sense in a terminal agent is gone. Every skill now speaks Lovable: the preview and its logs, migrations and Row Level Security, `AGENTS.md` and project memory, `roadmap.md`, plan mode, Playwright checks against the preview, and the platform's security scan.
 
@@ -54,6 +54,15 @@ npx skills add Socialmannen/skills@tdd
 | Skill | What it does | Say something like |
 | --- | --- | --- |
 | [seo](skills/seo/seo/SKILL.md) | Complete SEO for Google and AI search: starts with Lovable's SEO review, then indexability, metadata, structured data, Core Web Vitals, AI citation readiness (llms.txt, Google Preferred Sources) and a verifying re-scan. | "Optimize SEO", "show up in AI Overviews", "synas på Google" |
+
+### Growth
+
+| Skill | What it does | Say something like |
+| --- | --- | --- |
+| [landing-page-cro](skills/growth/landing-page-cro/SKILL.md) | Landing pages that convert: proven section structure, specific copy without filler, honest proof and a conversion audit. | "Rewrite the hero", "bättre landningssida" |
+| [pricing-and-paywalls](skills/growth/pricing-and-paywalls/SKILL.md) | Pricing pages, plan packaging, upgrade prompts and server-enforced feature gates. | "Build a pricing page", "lägg till betalvägg" |
+| [user-activation](skills/growth/user-activation/SKILL.md) | Simpler signup, first-run onboarding to the activation moment, and honest cancellation flows. | "Improve onboarding", "minska churn" |
+| [product-analytics](skills/growth/product-analytics/SKILL.md) | Consent-aware event and conversion tracking plus simple A/B tests without slowing the site. | "Set up tracking", "A/B-testa knappen" |
 
 ### Productivity
 
