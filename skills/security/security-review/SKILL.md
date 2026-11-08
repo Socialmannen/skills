@@ -1,6 +1,6 @@
 ---
 name: security-review
-description: End-to-end security review of a Lovable web app. Maps the attack surface (pages, server functions, public API routes, edge functions, direct Lovable Cloud table access, storage, webhooks, AI features), hunts OWASP Top 10 issues with Lovable-specific checks (RLS and grants, IDOR, auth bypass, secrets in the browser, XSS in React, SSRF, unverified webhooks, prompt injection), proves or discards each finding with a concrete probe, and fixes confirmed issues. Use on "security review", "security audit", "is my app secure", "pentest", "threat model", "can users see each other's data", after a security scan flags something, or before handling payments or sensitive data.
+description: "End-to-end security review of a Lovable app: maps the attack surface, hunts OWASP issues (RLS, IDOR, auth bypass, secrets in browser, XSS, webhooks, prompt injection), proves each finding with a probe and fixes it by category. Use before payments or sensitive data, or after a scan flags something. Används när säkerheten ska granskas, eller när användaren frågar \"är appen säker?\", \"säkerhetsgranska\", \"kan användare se varandras data?\" eller \"pentest\"."
 ---
 
 # Security Review

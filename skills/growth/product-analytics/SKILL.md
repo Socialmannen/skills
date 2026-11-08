@@ -1,6 +1,6 @@
 ---
 name: product-analytics
-description: Sets up privacy-respecting analytics, event and conversion tracking, and simple A/B tests in a web app, without slowing it down. Use when the user wants to track clicks, signups or purchases, measure a funnel, add Plausible/PostHog/GA4, verify conversion tracking, or test two versions of a headline or button. Triggers include "set up tracking", "how many click buy", "conversion tracking", "A/B test", "mät besökare", "spåra köp", "testa två rubriker".
+description: "Sets up privacy-respecting analytics, event and conversion tracking, and simple A/B tests without slowing the app. Use when tracking clicks, signups or purchases, measuring a funnel, or testing two versions. Används när besökare eller köp ska mätas, eller när användaren säger \"mät besökare\", \"spåra köp\", \"lägg till statistik\", \"A/B-test\" eller \"testa två rubriker\"."
 ---
 
 # Product Analytics & Experiments

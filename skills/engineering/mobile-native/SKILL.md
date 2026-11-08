@@ -1,6 +1,6 @@
 ---
 name: mobile-native
-description: Make a Lovable web app feel native on mobile devices — fixes for sticky hover states, tap highlight flashes, the 100vh bug, inputs zooming the viewport, laggy taps, pull-to-refresh hijacking scroll, safe areas, hidden mobile scrollbars, and touch targets. Use when optimizing web apps for mobile, building sheets and drawers, hiding scrollbars on phones, or when something feels like a website on a phone.
+description: "Makes a Lovable web app feel native on phones by fixing sticky hover, tap flashes, the 100vh bug, iOS input zoom, slow taps, pull-to-refresh hijacking, safe areas and small touch targets. Use when optimizing for mobile touch or building sheets and drawers. Används när appen ska mobilanpassas, eller när användaren säger \"känns inte som en app\", \"fixa för iphone\", \"snyggare på mobilen\", \"fel på pekskärm\" eller \"konstig scroll på telefonen\"."
 ---
 
 # Feeling Native On Mobile

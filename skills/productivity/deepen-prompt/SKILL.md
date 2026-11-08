@@ -1,6 +1,6 @@
 ---
 name: deepen-prompt
-description: Rewrites a user's prompt into a deeper (not bigger) version using a four-step professional-lens method. Use when the user asks to improve, rewrite, sharpen, or deepen a prompt or task description, or pastes a task and wants a better version of it before running it.
+description: "Rewrites a prompt into a deeper, more rigorous version (not bigger) using a four-step professional-lens method. Use when improving, sharpening or rewriting a prompt or task description. Används när en prompt ska förbättras, eller när användaren säger \"förbättra min prompt\", \"gör prompten skarpare\" eller \"skriv om instruktionen\"."
 ---
 
 # Deepen Prompt

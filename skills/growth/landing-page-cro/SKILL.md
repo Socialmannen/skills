@@ -1,6 +1,6 @@
 ---
 name: landing-page-cro
-description: Builds and rewrites landing pages and marketing pages that convert, with proven section structure, specific copy and conversion fixes. Use when the user wants a new landing page, a better homepage or hero text, sharper copy, or more signups/sales from a page. Triggers include "landing page", "rewrite the hero", "increase conversions", "bättre text på startsidan", "fler som köper".
+description: "Builds and rewrites landing pages that convert, with proven section structure, specific copy and conversion fixes. Use for a new landing page, a better homepage or hero text, sharper copy, or more signups and sales. Används när startsidan eller en landningssida ska byggas eller förbättras, eller när användaren säger \"bättre text på startsidan\", \"öka konvertering\", \"skriv om rubriken\" eller \"fler som köper\"."
 ---
 
 # Landing Page & Conversion

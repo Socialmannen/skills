@@ -37,7 +37,6 @@ npx skills add Socialmannen/skills@tdd
 | [implement](skills/engineering/implement/SKILL.md) | Builds a spec or plan in vertical slices (schema and RLS, server, UI) and verifies each in the preview. | "Implement the spec", "start on the roadmap" |
 | [prototype](skills/engineering/prototype/SKILL.md) | Throwaway UI variants switchable in the preview, or a clickable demo of a business rule, before building for real. | "Show me three layouts", "does this flow feel right?" |
 | [tdd](skills/engineering/tdd/SKILL.md) | Red-green loop with Vitest and Testing Library at agreed seams; mocking only at system boundaries. | "Test-first", "add tests for this" |
-| [pr](skills/engineering/pr/SKILL.md) | PR descriptions for GitHub-synced branches: visual summary, before/after evidence, merge risk. | "Write the PR description" |
 | [mobile-native](skills/engineering/mobile-native/SKILL.md) | Platform and CSS fixes that make web apps feel native on phones (touch, viewport, safe areas, hidden scrollbars). | "Make this feel native on mobile", "fix sticky hover on touch", "hide scrollbars on mobile" |
 | [break-ui](skills/engineering/break-ui/SKILL.md) | Stress-test UI components with realistic worst-case data to catch overflow and edge-case bugs. | "Break this UI", "test edge cases with long text" |
 | [ui-motion](skills/engineering/ui-motion/SKILL.md) | Purposeful animations, choreography, GPU performance and motion audits. | "Add animations", "choreograph this transition", "remove janky motion" |
@@ -48,6 +47,7 @@ npx skills add Socialmannen/skills@tdd
 | --- | --- | --- |
 | [security-review](skills/security/security-review/SKILL.md) | Maps the attack surface, hunts real vulnerabilities (RLS, IDOR, secrets, webhooks, XSS, prompt injection), proves each with a probe and fixes it. | "Security review", "can users see each other's data?" |
 | [launch-checklist](skills/security/launch-checklist/SKILL.md) | Launch audit: data lockdown, publishing and domains, then privacy, consent, accessibility, AI, payments and email rules, with sources. | "Are we ready to launch?", "pre-launch audit" |
+| [legal-compliance](skills/security/legal-compliance/SKILL.md) | Privacy policy, terms, cookie consent, GDPR, accessibility and email rules. | "Behöver jag en integritetspolicy?", "cookie-banner" |
 
 ### SEO
 

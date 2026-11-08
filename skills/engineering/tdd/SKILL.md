@@ -1,6 +1,6 @@
 ---
 name: tdd
-description: Test-driven development for Lovable apps with Vitest and Testing Library. Red-green loop at agreed seams, behaviour-focused tests for domain logic, hooks and components, and mocking Lovable Cloud, server functions and external APIs only at system boundaries. Use when the user wants tests, "test-first", "red-green-refactor", "add tests for this", wants a bug locked down with a regression test, or when the `implement` skill reaches logic-heavy work.
+description: "Test-driven development with Vitest and Testing Library in Lovable apps: red-green loop at agreed seams, behaviour-focused tests for domain logic, hooks and components. Use when adding tests, test-first work, or locking a bug with a regression test. Används när tester ska skrivas, eller när användaren säger \"skriv tester\", \"lägg till testfall\", \"testdriven utveckling\" eller \"säkra med tester\"."
 ---
 
 # Test-Driven Development

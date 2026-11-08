@@ -1,6 +1,6 @@
 ---
 name: grilling
-description: Interview the user relentlessly about a plan, feature idea or decision until every branch of the design tree is settled, asking in rounds with a recommended answer for each question. Use when the user says "grill me", "stress-test this idea", "poke holes in my plan", "ask me questions before you build", or when a request is too ambiguous to build well. Not for autonomous Goal runs.
+description: "Interviews the user in rounds about a plan or idea, with a recommended answer for each question, until every decision is settled. Use when a request is ambiguous or the user wants an idea stress-tested before building. Not for autonomous runs. Används när en idé behöver ifrågasättas innan bygge, eller när användaren säger \"grilla mig\", \"ställ svåra frågor\", \"hitta luckor i planen\" eller \"fråga mig innan du bygger\"."
 ---
 
 # Grilling

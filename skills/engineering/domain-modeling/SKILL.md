@@ -1,6 +1,6 @@
 ---
 name: domain-modeling
-description: Build and sharpen a Lovable project's domain model and turn it into database design. Challenges fuzzy terms, keeps GLOSSARY.md current, maps entities and relationships to Lovable Cloud tables, columns, enums and ownership rules, and records hard-to-reverse decisions in AGENTS.md. Use when naming things, designing tables or a schema, discussing what a "customer", "order" or "member" really is, before writing a migration for a new feature, or when terms in the code and in conversation disagree.
+description: "Sharpens a project's domain language in GLOSSARY.md and turns it into tables, columns, enums, relationships and ownership rules. Use when naming things, designing tables, or before a migration for a new concept. Används när datamodeller, tabeller eller begrepp ska struktureras, eller när användaren säger \"designa databasen\", \"skapa tabeller\", \"vad ska vi kalla detta\" eller \"datamodell\"."
 ---
 
 # Domain Modeling

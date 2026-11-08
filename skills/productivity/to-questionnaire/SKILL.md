@@ -1,6 +1,6 @@
 ---
 name: to-questionnaire
-description: Turn a decision the user cannot answer alone into a questionnaire for someone else (a client, a co-founder, a lawyer, a domain expert) to fill in async or in a meeting, saved as a shareable document in Files. Use when the user says "I need to ask my client", "make a questionnaire", "what should I ask them", "requirements form", or is blocked on information another person holds.
+description: "Turns a decision the user cannot answer alone into a questionnaire for a client, partner or expert, saved as a shareable document. Use when blocked on information another person holds. Används när frågor ska ställas till någon annan, eller när användaren säger \"gör ett frågeformulär\", \"vad ska jag fråga kunden\" eller \"samla in krav\"."
 ---
 
 # To Questionnaire

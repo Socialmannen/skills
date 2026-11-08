@@ -1,6 +1,6 @@
 ---
 name: seo
-description: "Complete SEO for classic search and AI search in a Lovable web app. Always starts with Lovable's built-in seo-review scan, then fixes indexability, per-route head metadata, sitemap and robots, JSON-LD structured data, Core Web Vitals, semantic content, and AI-search readiness (answer-first passages, llms.txt, entity consistency), and verifies with a re-scan. Use on \"seo\", \"optimize seo\", \"ai seo\", \"aeo\", \"geo\", \"rank higher on Google\", \"show up in ChatGPT or AI Overviews\", \"structured data\", \"sitemap\", \"sökmotoroptimering\", \"synas på Google\", \"synas i AI-sök\"."
+description: "Complete SEO for classic and AI search in a Lovable app: built-in scan first, then indexability, per-page metadata, sitemap, robots, structured data, Core Web Vitals and AI-search readiness, verified with a re-scan. Use when improving search visibility. Används när appen ska synas bättre, eller när användaren säger \"sökmotoroptimering\", \"fixa SEO\", \"synas på Google\" eller \"synas i AI-sök\"."
 ---
 
 # SEO (classic + AI search)

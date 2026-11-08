@@ -1,6 +1,6 @@
 ---
 name: implement
-description: Build a feature in a Lovable app from a spec, an approved plan, roadmap slices or a clear prompt, one vertical slice at a time (schema and RLS, server boundary, UI, verification), finishing with tests and a code review. Use when the user says "implement the spec", "build this", "start on the roadmap", "work through the tickets/slices", or after `to-spec` or plan approval.
+description: "Builds a feature from a spec, approved plan or roadmap in vertical slices (schema, server boundary, domain logic, UI, verification), verifying each slice in the preview. Use when building an agreed plan or working through roadmap slices. Används när en plan eller funktion ska byggas steg för steg, eller när användaren säger \"bygg detta\", \"implementera\", \"börja bygga\" eller \"följ planen\"."
 ---
 
 # Implement

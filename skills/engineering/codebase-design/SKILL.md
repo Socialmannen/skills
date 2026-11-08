@@ -1,6 +1,6 @@
 ---
 name: codebase-design
-description: Shared vocabulary and principles for designing deep modules in a Lovable React/TypeScript app (feature hooks, data modules, server functions, shadcn components). Use when designing or reshaping a module's interface, deciding where a seam goes, untangling Supabase calls scattered through components, making code more testable or easier for an agent to navigate, or when the user asks for an architecture review ("improve the architecture", "find refactoring opportunities", "this code is a mess").
+description: "Designs deep modules with small interfaces and clean seams in a Lovable React and TypeScript app, and untangles scattered data calls into testable feature modules. Use when shaping a module, refactoring messy code, or reviewing architecture. Används när kodstrukturen ska förbättras, eller när användaren säger \"refaktorera\", \"städa upp koden\", \"koden är rörig\", \"dela upp i moduler\" eller \"se över arkitekturen\"."
 ---
 
 # Codebase Design

@@ -1,6 +1,6 @@
 ---
 name: to-spec
-description: Turn the current conversation into a written spec plus a set of tracer-bullet slices with blocking edges, saved in the Lovable project (docs/specs/ and roadmap.md) so the work can be built slice by slice. Synthesis only, no interview. Use when the user says "write a spec", "turn this into a PRD", "break this into tickets/tasks/slices", "plan this feature", or after a `grilling` session for anything bigger than a quick change.
+description: "Turns the current conversation into a written spec plus tracer-bullet slices in docs/specs/ and roadmap.md. Synthesis only, no interview. Use for anything bigger than a quick change, or after a grilling session. Används när en idé ska bli en kravspecifikation, eller när användaren säger \"skriv en spec\", \"gör en PRD\", \"dela upp i delmål\" eller \"planera funktionen\"."
 ---
 
 # To Spec

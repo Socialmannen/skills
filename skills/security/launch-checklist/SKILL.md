@@ -1,6 +1,6 @@
 ---
 name: launch-checklist
-description: Launch readiness audit for a Lovable app before taking real users or payments. Locks down Lovable Cloud data (RLS, grants, storage, secrets, server functions), checks publishing, domains, auth redirects, SEO and error pages, then walks third parties, privacy policy, cookie consent, health and kids data, accessibility (WCAG 2.2), AI disclosures, user content, subscriptions and email rules, marking each item PASS/FAIL/N/A/UNKNOWN with evidence. Use on "launch checklist", "are we ready to launch", "pre-launch audit", "go live", "before we publish", or before connecting a custom domain or turning on payments.
+description: "Technical launch readiness audit for a Lovable app: data lockdown (RLS, grants, storage, secrets, server functions), publishing, domains, auth redirects, error pages, performance, touch targets and payment test mode, each marked PASS/FAIL/N/A/UNKNOWN with evidence. For privacy policy, cookies and GDPR use the legal-compliance skill. Use before publishing, going live, connecting a domain or turning on payments. Används när appen ska publiceras eller lanseras, eller när användaren frågar \"är vi redo att lansera?\", \"lanseringskontroll\", \"inför publicering\" eller \"gå live\"."
 ---
 
 # Launch Checklist
@@ -10,7 +10,7 @@ Audit and harden a Lovable app before public launch or a major release. Not lega
 ## Workflow
 
 1. **Scope the app from the code, not from memory.** List: tables and storage buckets in Lovable Cloud, auth methods, server functions and edge functions, connectors and secrets in use, payments (Stripe, Paddle), AI features, user uploads or posts, emails sent, third-party scripts and fonts in the root layout and route heads. Note where users are (EU, US states, worldwide) if known.
-2. **Pick the stages that apply.** Stages 1, 11 and 12 always apply. Load a reference stage only when the scope says it applies (for example skip Stage 9 if there are no subscriptions), and say which stages you skipped and why.
+2. **Pick the stages that apply.** Stages 1, 11 and 12 always apply.
 3. **Check each item** and mark it **PASS**, **FAIL**, **N/A** or **UNKNOWN**, with evidence: a file and line, a query result, a screenshot, or a setting you read. Never mark PASS from a guess; mark UNKNOWN when the evidence is outside your reach (a vendor contract, a dashboard setting only the user sees).
 4. **Report** using the format at the end. **Fix what you can** after the user agrees (or immediately when they asked for audit-and-fix): code and migrations yourself; settings and paperwork as clear instructions for the user.
 5. Turn every remaining FAIL and UNKNOWN into a dated item in `roadmap.md`. Must-do items are fixed before sign-ups or payments open.
@@ -33,21 +33,9 @@ For a deep security pass (finding and proving vulnerabilities rather than checki
 - [ ] The platform security scan has been run and its findings resolved or consciously accepted, but it is not treated as the whole security review. [Should do] Sources: Lovable security docs (https://docs.lovable.dev/features/security)
 - [ ] A one-page breach plan exists: who decides, how users are reached, which deadlines apply where the users are. [Must do] Sources: GDPR Art. 33 (https://gdpr-info.eu/art-33-gdpr/), 50-state survey (https://privacyrights.org/resources-tools/reports/data-breach-notification-laws-50-state-survey-2026-edition)
 
-## Stages 2 to 10: legal and compliance
+## Legal and privacy
 
-Read a reference only when its stage applies:
-
-| Stage | Read when | Reference |
-| --- | --- | --- |
-| 2. Third parties and dependencies | Always (every app loads fonts, packages or vendors) | [references/third-parties.md](references/third-parties.md) |
-| 3. Privacy policy, terms, store paperwork | The app collects any personal data, including emails at sign-up | [references/privacy-policy-and-terms.md](references/privacy-policy-and-terms.md) |
-| 4. Consent before tracking | Any analytics, pixel, replay or chat widget | [references/consent-and-tracking.md](references/consent-and-tracking.md) |
-| 5. Health and children | Health-related data, or users who may be under 13 | [references/health-and-kids.md](references/health-and-kids.md) |
-| 6. Accessibility | Always | [references/accessibility.md](references/accessibility.md) |
-| 7. AI features | Chat, generation, or user data sent to an AI provider | [references/ai-features.md](references/ai-features.md) |
-| 8. User content | Users upload or post content others can see | [references/user-content.md](references/user-content.md) |
-| 9. Subscriptions and cancellation | Recurring payments or free trials | [references/subscriptions.md](references/subscriptions.md) |
-| 10. Email and texts | The app sends email beyond auth emails, or any SMS | [references/email-and-sms.md](references/email-and-sms.md) |
+Privacy policy, cookie consent, GDPR, accessibility, subscriptions and email rules are covered by the `legal-compliance` skill. Run it alongside this checklist when the app collects personal data.
 
 ## Stage 11: Ship it on Lovable
 
@@ -78,9 +66,7 @@ So the next change does not undo the audit:
 
 - [ ] Record the technical rules the audit established in `AGENTS.md`, each with a one-line why (for example "Every new table ships with RLS and an ownership policy in the same migration. Why: tables are reachable with the public key."). [Must do]
 - [ ] Save business commitments that code must respect (target users' regions, "no tracking before consent", the accessibility target) to project memory. [Must do]
-- [ ] Re-run Stage 1 whenever a table, bucket, server function or secret is added; Stages 2 to 4 whenever a script, SDK, font or vendor is added; Stage 9 whenever pricing or checkout changes; Stages 3 and 7 when an AI feature or provider is added. [Must do]
-- [ ] Check the privacy policy against the vendor list and remove every promise the code does not keep. [Must do] Sources: FTC on OkCupid (https://www.ftc.gov/news-events/news/press-releases/2026/03/ftc-takes-action-against-match-okcupid-deceiving-users-sharing-personal-data-third-party)
-- [ ] Book a lawyer before collecting health data, targeting children, or once EU users become a real share of the user base; write down who to call on the day of a breach. [If it applies]
+- [ ] Re-run Stage 1 whenever a table, bucket, server function or secret is added. [Must do]
 
 ## Report format
 
@@ -93,7 +79,8 @@ Stages run: <list>; skipped: <list with reason>
 ## Must fix before launch
 1. [FAIL] <item>: <evidence> → <fix or who must do it>
 
-## Should fix soon;1. ...
+## Should fix soon
+1. ...
 
 ## Unknown (needs the user)
 1. [UNKNOWN] <item>: <what is needed to decide>

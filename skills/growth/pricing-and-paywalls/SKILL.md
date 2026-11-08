@@ -1,6 +1,6 @@
 ---
 name: pricing-and-paywalls
-description: Designs pricing pages, plan packaging, upgrade prompts and feature gates for apps that take payment. Use when the user wants a pricing page, plan tiers, monthly/yearly toggle, an upgrade modal, a paywall or locking features behind a paid plan. Triggers include "pricing page", "add an upgrade button", "paywall", "free vs pro", "prissida", "betalvägg", "uppgradera till pro".
+description: "Designs pricing pages, plan tiers, monthly/yearly toggles, upgrade prompts and feature gates for paid apps. Use when adding a pricing page, paywall or upgrade button. Används när prissidor, paket eller betalväggar ska skapas, eller när användaren säger \"prissida\", \"betalvägg\", \"uppgradera till pro\" eller \"gratis mot betald\"."
 ---
 
 # Pricing Pages & Paywalls

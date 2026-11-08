@@ -1,6 +1,6 @@
 ---
 name: user-activation
-description: Improves signup, first-run onboarding and cancellation flows so more new users reach value and fewer leave. Use when the user wants simpler registration, a welcome flow or getting-started checklist, empty states that guide, better activation, or a cancellation flow with save offers and exit reasons. Triggers include "improve onboarding", "simplify signup", "users drop off", "cancellation flow", "reduce churn", "förbättra onboarding", "avsluta prenumeration".
+description: "Improves signup, first-run onboarding and cancellation flows so more new users reach value and fewer leave. Use for simpler registration, a welcome flow or checklist, guiding empty states, or a cancellation flow with save offers. Används när registrering, onboarding eller uppsägning ska förbättras, eller när användaren säger \"förbättra onboarding\", \"enklare registrering\", \"användare hoppar av\" eller \"avsluta prenumeration\"."
 ---
 
 # User Activation & Retention

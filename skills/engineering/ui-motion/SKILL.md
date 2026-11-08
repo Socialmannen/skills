@@ -1,6 +1,6 @@
 ---
 name: ui-motion
-description: Design, build, choreograph and audit purposeful UI animations for web apps with high craft standards. Covers when to animate vs eliminate, GPU-friendly properties (transform/opacity only), easing curves and durations, orchestration (stagger, lead/follow), frame budget performance, and accessibility. Use when adding motion, animating transitions, fixing janky animations, choreographing complex interactions, or auditing and toning down over-animated UIs.
+description: "Designs and audits purposeful UI animation: when to animate, transform and opacity only, easing and durations, stagger, frame budget and reduced motion. Use when adding transitions, fixing janky animation, or toning down over-animated UI. Används när animationer ska läggas till eller tas bort, eller när användaren säger \"animera detta\", \"mjukare övergångar\", \"känns hackigt\" eller \"ta bort onödiga animationer\"."
 ---
 
 # UI Motion & Animation

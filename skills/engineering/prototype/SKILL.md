@@ -1,6 +1,6 @@
 ---
 name: prototype
-description: Build a throwaway prototype in a Lovable app to answer one design question fast, before committing to a database or polish. Either several radically different UI variants switchable in the preview, or a clickable demo of a state model or business rule. Use when the user wants to "try a few designs", "see options", "mock it up first", "what should this page look like", or check whether a flow or rule "feels right" before building it properly.
+description: "Builds a throwaway prototype that answers one design question fast: 3 to 5 UI variants switchable in the preview, or a clickable demo of a rule or flow. Use before committing to a database or polish. Används när användaren snabbt vill testa en idé eller se flera designförslag, t.ex. \"gör en prototyp\", \"visa tre varianter\", \"skissa upp\" eller \"testa en idé\"."
 ---
 
 # Prototype

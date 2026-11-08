@@ -1,6 +1,6 @@
 ---
 name: diagnosing-bugs
-description: Disciplined diagnosis loop for hard bugs and performance regressions in a Lovable app, such as a blank or broken preview, React runtime crashes, failing network calls, server or edge function errors, Lovable Cloud (Supabase) errors, RLS returning empty data, or works-in-preview-but-not-published. Use when the user says "debug this", "diagnose", "it's broken", "nothing happens", "white screen", "error", "slow", or when a quick fix has already failed once.
+description: "Disciplined diagnosis loop for hard bugs and performance regressions in a Lovable app: builds a reproducible signal (test, Playwright, SQL probe, logs) before changing code. Use for blank previews, runtime crashes, failing requests, server errors, empty data from RLS, or when a first fix failed. Används när något är trasigt, en bugg eller ett felmeddelande dyker upp, sidan kraschar, skärmen är vit eller användaren säger \"det funkar inte\", \"felsök\" eller \"hitta felet\"."
 ---
 
 # Diagnosing Bugs

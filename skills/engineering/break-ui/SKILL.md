@@ -1,6 +1,6 @@
 ---
 name: break-ui
-description: Stress-test UI components and screens with realistic worst-case edge data (extreme name lengths, unbreakable emails, empty states, massive numbers, missing fields, emoji). Use when testing layout resilience, finding overflow bugs, preparing a screen for production, or when asked to "break this UI" or "test edge cases".
+description: "Stress-tests UI components and screens with realistic worst-case data (long names, unbreakable emails, empty lists, huge numbers, missing fields, emoji) to expose layout breaks before production. Use when testing layout resilience, finding overflow bugs, or preparing a screen for launch. Används när gränssnittet ska stresstestas med extrem data, eller när användaren säger \"testa layouten\", \"stresstesta\", \"håller designen för lång text\" eller \"testa edge cases\"."
 ---
 
 # Breaking UI

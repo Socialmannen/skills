@@ -1,6 +1,6 @@
 ---
 name: llm-council
-description: Run a real decision through a council of five independent advisors (Contrarian, First Principles, Expansionist, Outsider, Executor) who answer separately, peer-review each other anonymously, and are synthesised into one verdict with a single first step. Based on Karpathy's LLM Council. Use on "council this", "run the council", "war room this", "pressure-test this", "debate this", or a genuine choice with stakes ("should I X or Y", "I'm torn between", "which option"). Not for factual lookups, simple yes/no questions or creation tasks.
+description: "Runs a real decision through five independent advisors who answer separately, peer-review each other blind, and are synthesised into one verdict with a first step. Use for genuine choices with stakes. Not for factual lookups or creation tasks. Används när ett svårt beslut ska vägas, eller när användaren säger \"kör rådet\", \"jag kan inte välja\", \"ska jag X eller Y\" eller \"vad är för- och nackdelarna\"."
 ---
 
 # LLM Council

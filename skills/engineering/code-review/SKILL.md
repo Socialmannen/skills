@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: Two-axis review of recent changes in a Lovable project. Standards (does the code follow AGENTS.md, the design system and Lovable conventions?) and Spec (does it do what the spec, plan or request asked?), reported side by side. Use when the user asks to review a feature, "check my code", "review since X", "is this good?", before publishing a big change, or at the end of the `implement` skill.
+description: "Reviews recent changes in a Lovable project on two separate axes, Standards (AGENTS.md, design system, Lovable conventions, code smells) and Spec (does it do what was asked). Use when reviewing a feature, checking code before publishing, or after implementing. Används när koden ska granskas, eller när användaren säger \"granska koden\", \"ser koden bra ut?\", \"kolla min kod\" eller \"code review\"."
 ---
 
 # Code Review
