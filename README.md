@@ -1,6 +1,6 @@
 # Skills for Lovable
 
-Twenty-three focused agent skills for building real apps in [Lovable](https://lovable.dev): React and TypeScript, Tailwind and shadcn, Lovable Cloud (database, auth, storage), server functions and GitHub sync.
+Twenty-four focused agent skills for building real apps in [Lovable](https://lovable.dev): React and TypeScript, Tailwind and shadcn, Lovable Cloud (database, auth, storage), server functions and GitHub sync.
 
 They are a Lovable edition of [Matt Pocock's skills](https://github.com/mattpocock/skills): the engineering discipline is kept (grilling, specs, TDD, deep modules, two-axis code review, a real debugging loop), and everything that only made sense in a terminal agent is gone. Every skill now speaks Lovable: the preview and its logs, migrations and Row Level Security, `AGENTS.md` and project memory, `roadmap.md`, plan mode, Playwright checks against the preview, and the platform's security scan.
 
@@ -73,6 +73,7 @@ npx skills add Socialmannen/skills@tdd
 | [to-questionnaire](skills/productivity/to-questionnaire/SKILL.md) | Turns what you cannot answer alone into a questionnaire for a client or expert, saved as a shareable file. | "What should I ask my client?" |
 | [llm-council](skills/productivity/llm-council/SKILL.md) | Five independent advisors, blind peer review and a chairman verdict for decisions with real stakes. | "Council this", "should we pick X or Y?" |
 | [deepen-prompt](skills/productivity/deepen-prompt/SKILL.md) | Rewrites a prompt into a deeper (not bigger) version: what a top professional would do, the rawest source material, concrete methods and tools, and what proves the result right. | "Improve this prompt", "rewrite my prompt deeper" |
+| [skill-design](skills/productivity/skill-design/SKILL.md) | Designs and audits small, focused skills after Anthropic best practices, with Swedish trigger words so they activate automatically. | "Gör en ny skill", "granska mina skills" |
 
 ## How they fit together
 
