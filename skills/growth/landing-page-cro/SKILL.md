@@ -1,6 +1,6 @@
 ---
 name: landing-page-cro
-description: "Builds and rewrites landing pages that convert, with proven section structure, specific copy and conversion fixes. Use for a new landing page, a better homepage or hero text, sharper copy, or more signups and sales. Används när startsidan eller en landningssida ska byggas eller förbättras, eller när användaren säger \"bättre text på startsidan\", \"öka konvertering\", \"skriv om rubriken\" eller \"fler som köper\"."
+description: "Builds and rewrites landing pages that convert, with proven section structure, specific copy and conversion fixes. Use for a new landing page, a better homepage or hero text, sharper copy, or more signups and sales. Do not use on community or association sites, member portals, dashboards or simple tools; use declutter-ui there. Används när startsidan eller en landningssida ska byggas eller förbättras, eller när användaren säger \"bättre text på startsidan\", \"öka konvertering\", \"skriv om rubriken\" eller \"fler som köper\". Används endast för kommersiella sidor som säljer en produkt eller tjänst."
 ---
 
 # Landing Page & Conversion
@@ -13,6 +13,7 @@ A landing page has one job: make the right visitor take one action. Generated pa
 2. **One primary action per page.** One CTA wording, repeated; secondary actions are visually quieter.
 3. **Specific beats clever.** Every headline must say what it is, who it is for, or what outcome it gives. Ban filler: "revolutionary", "seamless", "unlock", "next-generation", "empower", "elevate".
 4. **Write in the site's language** and the customer's own words. Keep the user's stated facts (prices, features) exact.
+5. **No scroll-only buttons.** Never add anchor buttons that just scroll down the same page, and never force a hero section onto a non-commercial site.
 
 ## Workflow
 

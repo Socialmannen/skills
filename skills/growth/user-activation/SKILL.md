@@ -1,6 +1,6 @@
 ---
 name: user-activation
-description: "Improves signup, first-run onboarding and cancellation flows so more new users reach value and fewer leave. Use for simpler registration, a welcome flow or checklist, guiding empty states, or a cancellation flow with save offers. Används när registrering, onboarding eller uppsägning ska förbättras, eller när användaren säger \"förbättra onboarding\", \"enklare registrering\", \"användare hoppar av\" eller \"avsluta prenumeration\"."
+description: "Improves signup, first-run onboarding and cancellation flows so more new users reach value and fewer leave. Use for simpler registration, a welcome flow or checklist, guiding empty states, or a cancellation flow with save offers. Do not use on simple sites or community apps without signup, paid plans or multi-step onboarding. Används när registrering, onboarding eller uppsägning ska förbättras, eller när användaren säger \"förbättra onboarding\", \"enklare registrering\", \"användare hoppar av\" eller \"avsluta prenumeration\"."
 ---
 
 # User Activation & Retention

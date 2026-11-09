@@ -1,6 +1,6 @@
 # Skills for Lovable
 
-Twenty-four focused agent skills for building real apps in [Lovable](https://lovable.dev): React and TypeScript, Tailwind and shadcn, Lovable Cloud (database, auth, storage), server functions and GitHub sync.
+Twenty-five focused agent skills for building real apps in [Lovable](https://lovable.dev): React and TypeScript, Tailwind and shadcn, Lovable Cloud (database, auth, storage), server functions and GitHub sync.
 
 They are a Lovable edition of [Matt Pocock's skills](https://github.com/mattpocock/skills): the engineering discipline is kept (grilling, specs, TDD, deep modules, two-axis code review, a real debugging loop), and everything that only made sense in a terminal agent is gone. Every skill now speaks Lovable: the preview and its logs, migrations and Row Level Security, `AGENTS.md` and project memory, `roadmap.md`, plan mode, Playwright checks against the preview, and the platform's security scan.
 
@@ -39,6 +39,7 @@ npx skills add Socialmannen/skills@tdd
 | [tdd](skills/engineering/tdd/SKILL.md) | Red-green loop with Vitest and Testing Library at agreed seams; mocking only at system boundaries. | "Test-first", "add tests for this" |
 | [mobile-native](skills/engineering/mobile-native/SKILL.md) | Platform and CSS fixes that make web apps feel native on phones (touch, viewport, safe areas, hidden scrollbars). | "Make this feel native on mobile", "fix sticky hover on touch", "hide scrollbars on mobile" |
 | [break-ui](skills/engineering/break-ui/SKILL.md) | Stress-test UI components with realistic worst-case data to catch overflow and edge-case bugs. | "Break this UI", "test edge cases with long text" |
+| [declutter-ui](skills/engineering/declutter-ui/SKILL.md) | Removes generic hero sections, filler copy and buttons that only scroll, so pages lead with their core content. | "Rensa klutter", "gör sidan renare" |
 | [ui-motion](skills/engineering/ui-motion/SKILL.md) | Purposeful animations, choreography, GPU performance and motion audits. | "Add animations", "choreograph this transition", "remove janky motion" |
 
 ### Security
@@ -85,7 +86,8 @@ idea ──> grilling ──> to-spec ──> implement ──> code-review ─�
                          │            ├── codebase-design
                          │            ├── ui-motion
                          │            ├── mobile-native
-                         │            └── break-ui
+                         │            ├── break-ui
+                         │            └── declutter-ui
                          └── prototype (when the UI or a rule is still open)
 
 anytime:          diagnosing-bugs
