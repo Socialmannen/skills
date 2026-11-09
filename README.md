@@ -1,6 +1,6 @@
 # Skills for Lovable
 
-Twenty-five focused agent skills for building real apps in [Lovable](https://lovable.dev): React and TypeScript, Tailwind and shadcn, Lovable Cloud (database, auth, storage), server functions and GitHub sync.
+Twenty-seven focused agent skills for building real apps in [Lovable](https://lovable.dev): React and TypeScript, Tailwind and shadcn, Lovable Cloud (database, auth, storage), server functions and GitHub sync.
 
 They are a Lovable edition of [Matt Pocock's skills](https://github.com/mattpocock/skills): the engineering discipline is kept (grilling, specs, TDD, deep modules, two-axis code review, a real debugging loop), and everything that only made sense in a terminal agent is gone. Every skill now speaks Lovable: the preview and its logs, migrations and Row Level Security, `AGENTS.md` and project memory, `roadmap.md`, plan mode, Playwright checks against the preview, and the platform's security scan.
 
@@ -40,6 +40,7 @@ npx skills add Socialmannen/skills@tdd
 | [mobile-native](skills/engineering/mobile-native/SKILL.md) | Platform and CSS fixes that make web apps feel native on phones (touch, viewport, safe areas, hidden scrollbars). | "Make this feel native on mobile", "fix sticky hover on touch", "hide scrollbars on mobile" |
 | [break-ui](skills/engineering/break-ui/SKILL.md) | Stress-test UI components with realistic worst-case data to catch overflow and edge-case bugs. | "Break this UI", "test edge cases with long text" |
 | [declutter-ui](skills/engineering/declutter-ui/SKILL.md) | Removes generic hero sections, filler copy and buttons that only scroll, so pages lead with their core content. | "Rensa klutter", "gör sidan renare" |
+| [codebase-audit](skills/engineering/codebase-audit/SKILL.md) | Read-only audit for dead code, unused packages and duplicates, then cleanup of approved batches only. | "Städa koden", "hitta död kod" |
 | [ui-motion](skills/engineering/ui-motion/SKILL.md) | Purposeful animations, choreography, GPU performance and motion audits. | "Add animations", "choreograph this transition", "remove janky motion" |
 
 ### Security
@@ -75,6 +76,7 @@ npx skills add Socialmannen/skills@tdd
 | [llm-council](skills/productivity/llm-council/SKILL.md) | Five independent advisors, blind peer review and a chairman verdict for decisions with real stakes. | "Council this", "should we pick X or Y?" |
 | [deepen-prompt](skills/productivity/deepen-prompt/SKILL.md) | Rewrites a prompt into a deeper (not bigger) version: what a top professional would do, the rawest source material, concrete methods and tools, and what proves the result right. | "Improve this prompt", "rewrite my prompt deeper" |
 | [skill-design](skills/productivity/skill-design/SKILL.md) | Designs and audits small, focused skills after Anthropic best practices, with Swedish trigger words so they activate automatically. | "Gör en ny skill", "granska mina skills" |
+| [knowledge-curator](skills/productivity/knowledge-curator/SKILL.md) | Writes and trims standing rules and puts each in the right home (knowledge, AGENTS.md, memory or a skill). | "Lovable glömmer hela tiden", "städa min knowledge" |
 
 ## How they fit together
 

@@ -13,3 +13,4 @@ Day-to-day building in a Lovable app.
 - [break-ui](break-ui/SKILL.md): stress-test UI components with realistic worst-case data to catch overflow and edge-case bugs.
 - [ui-motion](ui-motion/SKILL.md): purposeful animations, choreography, GPU performance and motion audits.
 - [declutter-ui](declutter-ui/SKILL.md): remove hero filler, restating copy and scroll-only buttons so pages lead with core content.
+- [codebase-audit](codebase-audit/SKILL.md): read-only audit for dead code and unused packages, then cleanup of approved batches only.

@@ -8,3 +8,4 @@ Thinking, planning and deciding before and around the build.
 - [llm-council](llm-council/SKILL.md): five advisors, blind peer review and one verdict for hard decisions.
 - [deepen-prompt](deepen-prompt/SKILL.md): rewrite a prompt into a deeper (not bigger) version of the same task.
 - [skill-design](skill-design/SKILL.md): design and audit small, auto-triggering skills with Swedish triggers.
+- [knowledge-curator](knowledge-curator/SKILL.md): write and trim standing rules and put each in the right home.
