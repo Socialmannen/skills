@@ -4,6 +4,8 @@ Twenty-seven focused agent skills for building real apps in [Lovable](https://lo
 
 They are a Lovable edition of [Matt Pocock's skills](https://github.com/mattpocock/skills): the engineering discipline is kept (grilling, specs, TDD, deep modules, two-axis code review, a real debugging loop), and everything that only made sense in a terminal agent is gone. Every skill now speaks Lovable: the preview and its logs, migrations and Row Level Security, `AGENTS.md` and project memory, `roadmap.md`, plan mode, Playwright checks against the preview, and the platform's security scan.
 
+Each skill is small and focused so it only loads when it is useful, and every description carries Swedish trigger words, so writing "det funkar inte" or "städa koden" starts the right skill on its own.
+
 ## Install in Lovable
 
 **Ask in chat.** In any Lovable project, write for example:
@@ -20,7 +22,7 @@ Lovable imports them and asks you to approve. Approved skills appear under **Set
 npx skills add Socialmannen/skills@tdd
 ```
 
-**Use them.** Skills load automatically when your request matches their description ("debug this", "write a spec", "are we ready to launch?"). To call one explicitly, type `/` in the chat box and pick it, for example `/grilling`.
+**Use them.** Skills load automatically when your request matches their description, in English or in Swedish ("debug this" / "det funkar inte", "write a spec" / "skriv en spec", "are we ready to launch?" / "är vi redo att lansera?"). To call one explicitly, type `/` in the chat box and pick it, for example `/grilling`.
 
 **Update or remove.** Ask Lovable to re-import a skill to get the latest version from this repo; delete skills under **Settings > Skills**.
 
@@ -81,7 +83,7 @@ npx skills add Socialmannen/skills@tdd
 ## How they fit together
 
 ```text
-idea ──> grilling ──> to-spec ──> implement ──> code-review ──> pr
+idea ──> grilling ──> to-spec ──> implement ──> code-review
                          │            │
                          │            ├── tdd
                          │            ├── domain-modeling
@@ -92,14 +94,21 @@ idea ──> grilling ──> to-spec ──> implement ──> code-review ─�
                          │            └── declutter-ui
                          └── prototype (when the UI or a rule is still open)
 
-anytime:          diagnosing-bugs
+anytime:          diagnosing-bugs, codebase-audit
 big decisions:    llm-council, to-questionnaire
-before launch:    security-review ──> launch-checklist
+the page itself:  landing-page-cro, pricing-and-paywalls, user-activation
+being found:      seo, product-analytics
+before launch:    security-review ──> launch-checklist ──> legal-compliance
+sharpen the setup: deepen-prompt, skill-design, knowledge-curator
 ```
 
 ## What changed from the original
 
-The original collection had 60 skills written for terminal agents (Claude Code, Codex, Copilot CLI). This edition keeps the 14 that matter for building web apps in Lovable, adds one new skill (`deepen-prompt`), merges overlapping ones (`implement` + `implement-spec`, `to-spec` + `to-tickets`, 19 Mantis micro-skills into `security-review`, `improve-codebase-architecture` into `codebase-design`), and removes CLI plugins, local issue-tracker setup, git hooks and personal experiments. See [CHANGELOG.md](CHANGELOG.md) for the full list. The untouched original is preserved on the `backup/original` branch.
+The original collection had 60 skills written for terminal agents (Claude Code, Codex, Copilot CLI). The Lovable edition started from the 14 that matter for building web apps, merged overlapping ones (`implement` + `implement-spec`, `to-spec` + `to-tickets`, 19 Mantis micro-skills into `security-review`, `improve-codebase-architecture` into `codebase-design`), and removed CLI plugins, local issue-tracker setup, git hooks and personal experiments.
+
+Since then the set has grown to 27. Fourteen skills were written for work the original never covered: `deepen-prompt`, `skill-design` and `knowledge-curator` for sharpening prompts, skills and standing rules; `seo`, `landing-page-cro`, `pricing-and-paywalls`, `user-activation` and `product-analytics` for being found, converting and measuring; `legal-compliance` for privacy and consent; `mobile-native`, `break-ui`, `ui-motion` and `declutter-ui` for how the app feels and what it should not contain; and `codebase-audit` for keeping the code clean. `pr` was dropped along the way: Lovable writes the commit message and handles git.
+
+See [CHANGELOG.md](CHANGELOG.md) for the full list. The untouched original is preserved on the `backup/original` branch.
 
 ## Contributing
 
@@ -111,4 +120,4 @@ node scripts/validate-skills.mjs
 
 ## Credits and license
 
-Based on [mattpocock/skills](https://github.com/mattpocock/skills) by Matt Pockck (MIT). The PR template is adapted from the show-me skill by Dex Horthy ([HumanLayer](https://github.com/humanlayer/skills)); the launch checklist draws on the [launch readiness guide](https://ducktate.com/learn/launch-readiness/); the false-positive rules in `security-review` are adapted from Google's Mantis framework. Released under the [MIT License](LICENSE).
+Based on [mattpocock/skills](https://github.com/mattpocock/skills) by Matt Pocock (MIT). The PR template is adapted from the show-me skill by Dex Horthy ([HumanLayer](https://github.com/humanlayer/skills)); the launch checklist draws on the [launch readiness guide](https://ducktate.com/learn/launch-readiness/); the false-positive rules in `security-review` are adapted from Google's Mantis framework. Released under the [MIT License](LICENSE).
