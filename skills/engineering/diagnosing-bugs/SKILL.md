@@ -1,6 +1,6 @@
 ---
 name: diagnosing-bugs
-description: "Disciplined diagnosis loop for hard bugs and performance regressions in a Lovable app: builds a reproducible signal (test, Playwright, SQL probe, logs) before changing code. Use for blank previews, runtime crashes, failing requests, server errors, empty data from RLS, or when a first fix failed. Används när något är trasigt, en bugg eller ett felmeddelande dyker upp, sidan kraschar, skärmen är vit eller användaren säger att något \"funkar inte\" eller \"fungerar inte\" (t.ex. \"bilduppladdningen funkar inte\"), \"går inte att\", \"får fel\", \"felsök\" eller \"hitta felet\"."
+description: "Disciplined diagnosis loop for hard bugs and performance regressions in a Lovable app: builds a reproducible signal before changing code, fixes the root cause, and permanently adds an automated regression test so the bug can never recur. Use for blank previews, runtime crashes, failing requests, server errors, empty data from RLS, or when a first fix failed. Används när något är trasigt, en bugg eller ett felmeddelande dyker upp, sidan kraschar, skärmen är vit eller användaren säger att något \"funkar inte\" eller \"fungerar inte\" (t.ex. \"bilduppladdningen funkar inte\"), \"går inte att\", \"får fel\", \"felsök\" eller \"hitta felet\"."
 ---
 
 # Diagnosing Bugs
@@ -19,7 +19,7 @@ Never show secrets in commands, outputs or screenshots: access tokens, session J
 
 Ways to build one in a Lovable project, roughly in order of preference:
 
-1. **Failing Vitest test** at the seam that reaches the bug (`bunx vitest run path/to/file.test.ts`).
+1. **Failing Vitest test** in `src/test/` at the seam that reaches the bug (`bunx vitest run path/to/file.test.ts`). Preferred because it directly becomes the permanent regression test.
 2. **Playwright script** against the running preview at `http://localhost:8080` that drives the UI and asserts on DOM, console or network. When the bug needs a signed-in user, restore a real session first; a flow tested only signed-out is not reproduced.
 3. **Direct call to the server boundary**: invoke the server function or edge function with fixture input and assert on the response, so UI noise is out of the loop.
 4. **SQL reproduction** for data and permission bugs: run the failing query against Lovable Cloud as the same role the app uses (`anon` or `authenticated` with the user's claims, see [references/lovable-signals.md](references/lovable-signals.md)). An RLS bug reproduces here in seconds.
@@ -70,19 +70,33 @@ Each probe maps to one prediction. Change one variable at a time.
 - Never "log everything and grep".
 - Performance: measure first. Take a baseline (`performance.now()` timings, React Profiler, network waterfall in Playwright, `explain analyze` for slow queries), then bisect.
 
-## Phase 5: Fix and regression test
+## Phase 5: Fix and permanent regression test
 
-Write the regression test before the fix, but only at a seam that exercises the real bug pattern. If the only available seam is too shallow to reproduce it (for example an RLS bug that a mocked client cannot see), that is a finding: note it, and keep the Phase 1 loop (SQL probe or Playwright script) as the verification instead.
+Every bug fix MUST leave behind a permanent automated regression test in the project repository (e.g. in `src/test/*.test.ts(x)` or an automated end-to-end test) so the bug can never recur unnoticed in future edits. A bug fix without a permanent test is incomplete.
 
-1. Turn the minimised repro into a failing test at that seam and watch it fail.
-2. Apply the smallest fix that addresses the confirmed cause. Fix the category, not the instance: if a policy, fetcher or route had the wrong assumption, check its siblings in the same turn.
-3. Watch the test pass, then re-run the original un-minimised loop.
-4. Check the build-error log after the edit.
+1. **Write the permanent regression test first**:
+   - Turn the minimised repro into a permanent automated test file in `src/test/` (or add a test case to an existing suite).
+   - Write an explicit assertion for the exact bug scenario, inputs, and edge cases.
+   - Run the test (`bunx vitest run path/to/test.ts`) and confirm it fails (RED) on the unfixed code.
+   - *Exception*: Only when no automated test runner can reach the seam (e.g. live external third-party OAuth provider without sandbox), document why in the report and preserve the Playwright verification script.
+2. **Apply the minimal fix**:
+   - Apply the smallest fix that addresses the confirmed cause. Fix the category, not just the single instance: if a policy, fetcher, or route had an invalid assumption, check its siblings in the same turn.
+3. **Verify the regression test passes (GREEN)**:
+   - Run `bunx vitest run path/to/test.ts` and confirm the regression test now passes cleanly.
+   - Re-run the full test suite (`bunx vitest run`) to guarantee no existing functionality broke.
+   - Re-run the Phase 1 loop if separate (e.g. live preview check).
+4. **Check the build**:
+   - Inspect `/tmp/observability/build-errors.log` and verify zero build or type errors.
 
 ## Phase 6: Clean up and report
 
-- [ ] Original repro no longer reproduces (re-run the Phase 1 loop).
-- [ ] Regression test passes, or the missing seam is documented.
+- [ ] Permanent regression test added to `src/test/` and passing cleanly in `bunx vitest run` (guarantees the bug cannot recur).
+- [ ] Entire test suite passes without regressions (`bunx vitest run`).
+- [ ] Original repro no longer reproduces in the live preview.
 - [ ] All `[DEBUG-...]` lines removed (search the prefix).
-- [ ] Throwaway scripts and harnesses deleted (they live in `/tmp`, not the project).
-- [ ] The user is told, in plain words, what was wrong, what changed, and what to try in the preview. Name the cause that turned out to be correct so the next debugging session starts from it.
+- [ ] Throwaway scripts and harnesses in `/tmp` deleted (the permanent regression test lives in `src/test/`, never in `/tmp`).
+- [ ] The user is told, in plain words:
+  - What was wrong (root cause).
+  - What was changed to fix it.
+  - Which automated regression test was added (file and test name) to guarantee the bug never happens again.
+  - What to try in the preview to verify.
