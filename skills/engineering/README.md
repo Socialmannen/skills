@@ -14,3 +14,4 @@ Day-to-day building in a Lovable app.
 - [ui-motion](ui-motion/SKILL.md): purposeful animations, choreography, GPU performance and motion audits.
 - [declutter-ui](declutter-ui/SKILL.md): remove hero filler, restating copy and scroll-only buttons so pages lead with core content.
 - [codebase-audit](codebase-audit/SKILL.md): read-only audit for dead code and unused packages, then cleanup of approved batches only.
+- [unslop-ui](unslop-ui/SKILL.md): eliminate generic AI aesthetics (purple gradients, sparkles, icon cards, low-contrast text) and apply opinionated design archetypes, tinted neutrals, and precision typographic details.

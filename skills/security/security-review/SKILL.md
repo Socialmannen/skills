@@ -1,6 +1,6 @@
 ---
 name: security-review
-description: "End-to-end security review of a Lovable app: maps the attack surface, hunts OWASP issues (RLS, IDOR, auth bypass, secrets in browser, XSS, webhooks, prompt injection), proves each finding with a probe and fixes it by category. Use before payments or sensitive data, or after a scan flags something. Används när säkerheten ska granskas, eller när användaren frågar \"är appen säker?\", \"säkerhetsgranska\", \"kan användare se varandras data?\" eller \"pentest\"."
+description: "End-to-end security review of a Lovable app: maps the attack surface, hunts OWASP issues (RLS, IDOR, auth bypass, spoofed headers, source map leaks, secrets in browser, XSS, webhooks, prompt injection), proves each finding with a probe and fixes it by category. Use before payments or sensitive data, or after a scan flags something. Används när säkerheten ska granskas, eller när användaren frågar \"är appen säker?\", \"säkerhetsgranska\", \"kan användare se varandras data?\" eller \"pentest\"."
 ---
 
 # Security Review
@@ -14,7 +14,9 @@ Never print secrets, tokens or session data while probing; read them from enviro
 Build the map from the code and the backend, not from assumptions. For each entry point note who can reach it and what it touches.
 
 - **Direct table access from the browser**: every table reachable with the publishable key. RLS and grants are the only protection here.
-- **Server functions**: public unless protected by auth middleware. List which ones are protected and which are called from public pages.
+- **Server functions & API routes**: public unless protected by auth middleware. List which ones are protected and which are called from public pages. Verify that no endpoint trusts client-supplied identity headers (e.g. `x-user-id`, `x-role`) without cryptographic session verification.
+- **Client-only route guards**: UI components that only conditionally render or navigate (e.g. `<Navigate to="/login" />`) while underlying data loaders or server functions remain open without auth checks.
+- **Source maps & production assets**: whether production builds emit `.map` files in public bundles, exposing unminified source code, internal comments, hidden admin routes, and backend API shapes.
 - **Public API routes** (webhooks, OAuth callbacks, cron): reachable by anyone on the internet; each must verify its caller itself.
 - **Edge functions** (projects that use them): whether JWT verification is on, and what each does with the caller's identity.
 - **Storage buckets**: public or private, and the policies on object paths.

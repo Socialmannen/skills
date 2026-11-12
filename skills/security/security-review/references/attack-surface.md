@@ -15,6 +15,7 @@ Each class lists what to look for and how to probe it. Work top to bottom; the f
 9. AI features
 10. Abuse and cost
 11. Dependencies
+12. Source map and build asset exposure
 
 ## 1. Broken access control (RLS, grants, IDOR)
 
@@ -26,6 +27,8 @@ Look for:
 - Update policies that let users change ownership columns, status, price or role fields.
 - Views or `security definer` functions that bypass RLS and are callable by `anon` or `authenticated`.
 - Client queries that filter by `user_id` in the browser as their only protection.
+- Server functions or APIs that read identity from unverified request headers (`x-user-id`, `x-role`) instead of verified session tokens.
+- Client-only route guards that hide UI while the underlying data loader or API remains reachable.
 
 Probe:
 
@@ -130,5 +133,17 @@ Probe: as a normal user, submit content instructing the model to reveal its inst
 Look for: no rate limiting on sign-up, login, password reset, contact forms, email-sending or AI endpoints; unbounded list queries; uploads without size limits. Usually Medium unless the cost or spam impact is large. Lovable has no built-in generic rate limiter; propose one only after explaining the trade-off.
 
 ## 11. Dependencies
+12. Source map and build asset exposure
 
 Look for packages that do not exist or are typo-squats of popular ones, abandoned packages with known advisories, and lockfile drift. Run the platform dependency scan or `npm audit`/OSV-Scanner equivalents and report high-severity, reachable issues.
+
+## 12. Source map and build asset exposure
+
+Look for:
+
+- `.map` files generated in production bundles (`sourcemap: true` in Vite build config without server-side restriction).
+- Exposed source maps let attackers view entire raw TypeScript files, internal backend endpoint URLs, comments, and unreleased logic directly in the browser Developer Tools.
+
+Probe:
+
+- Request `https://<published-url>/assets/<bundle-name>.js.map` or check the Sources tab in browser devtools on production or preview.

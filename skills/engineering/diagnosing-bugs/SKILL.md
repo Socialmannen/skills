@@ -1,6 +1,6 @@
 ---
 name: diagnosing-bugs
-description: "Disciplined diagnosis loop for hard bugs and performance regressions in a Lovable app: builds a reproducible signal before changing code, fixes the root cause, and permanently adds an automated regression test so the bug can never recur. Use for blank previews, runtime crashes, failing requests, server errors, empty data from RLS, or when a first fix failed. Används när något är trasigt, en bugg eller ett felmeddelande dyker upp, sidan kraschar, skärmen är vit eller användaren säger att något \"funkar inte\" eller \"fungerar inte\" (t.ex. \"bilduppladdningen funkar inte\"), \"går inte att\", \"får fel\", \"felsök\" eller \"hitta felet\"."
+description: "Disciplined diagnosis loop for hard bugs and performance regressions in a Lovable app: builds a reproducible signal before changing code, fixes the root cause, and permanently adds an automated regression test so the bug can never recur. Use for blank previews, runtime crashes, failing requests, server errors, empty data from RLS, or when a first fix failed. Används när något är trasigt, en bugg eller ett felmeddelande dyker upp, sidan kraschar, skärmen är vit eller användaren säger att något \"funkar inte\" eller \"fungerar inte\" (t.ex. \"bilduppladdningen funkar inte\"), \"går inte att\", \"får fel\", \"felsök\", \"systematisk felsökning\", \"agentic debugging\", \"hitta grundorsaken\" eller \"hitta felet\"."
 ---
 
 # Diagnosing Bugs

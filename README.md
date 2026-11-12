@@ -1,6 +1,6 @@
 # Skills for Lovable
 
-Twenty-seven focused agent skills for building real apps in [Lovable](https://lovable.dev): React and TypeScript, Tailwind and shadcn, Lovable Cloud (database, auth, storage), server functions and GitHub sync.
+Twenty-eight focused agent skills for building real apps in [Lovable](https://lovable.dev): React and TypeScript, Tailwind and shadcn, Lovable Cloud (database, auth, storage), server functions and GitHub sync.
 
 They are a Lovable edition of [Matt Pocock's skills](https://github.com/mattpocock/skills): the engineering discipline is kept (grilling, specs, TDD, deep modules, two-axis code review, a real debugging loop), and everything that only made sense in a terminal agent is gone. Every skill now speaks Lovable: the preview and its logs, migrations and Row Level Security, `AGENTS.md` and project memory, `roadmap.md`, plan mode, Playwright checks against the preview, and the platform's security scan.
 
@@ -42,6 +42,7 @@ npx skills add Socialmannen/skills@tdd
 | [mobile-native](skills/engineering/mobile-native/SKILL.md) | Platform and CSS fixes that make web apps feel native on phones (touch, viewport, safe areas, hidden scrollbars). | "Make this feel native on mobile", "fix sticky hover on touch", "hide scrollbars on mobile" |
 | [break-ui](skills/engineering/break-ui/SKILL.md) | Stress-test UI components with realistic worst-case data to catch overflow and edge-case bugs. | "Break this UI", "test edge cases with long text" |
 | [declutter-ui](skills/engineering/declutter-ui/SKILL.md) | Removes generic hero sections, filler copy and buttons that only scroll, so pages lead with their core content. | "Rensa klutter", "gör sidan renare" |
+| [unslop-ui](skills/engineering/unslop-ui/SKILL.md) | Eliminates AI slop (purple gradients, sparkles, icon card walls) with opinionated design archetypes, tinted neutrals, and precision typography. | "Unslop the design", "ta bort AI-känslan", "unslop" |
 | [codebase-audit](skills/engineering/codebase-audit/SKILL.md) | Read-only audit for dead code, unused packages and duplicates, then cleanup of approved batches only. | "Städa koden", "hitta död kod" |
 | [ui-motion](skills/engineering/ui-motion/SKILL.md) | Purposeful animations, choreography, GPU performance and motion audits. | "Add animations", "choreograph this transition", "remove janky motion" |
 
@@ -91,7 +92,8 @@ idea ──> grilling ──> to-spec ──> implement ──> code-review
                          │            ├── ui-motion
                          │            ├── mobile-native
                          │            ├── break-ui
-                         │            └── declutter-ui
+                         │            ├── declutter-ui
+                         │            └── unslop-ui
                          └── prototype (when the UI or a rule is still open)
 
 anytime:          diagnosing-bugs, codebase-audit
@@ -106,7 +108,7 @@ sharpen the setup: deepen-prompt, skill-design, knowledge-curator
 
 The original collection had 60 skills written for terminal agents (Claude Code, Codex, Copilot CLI). The Lovable edition started from the 14 that matter for building web apps, merged overlapping ones (`implement` + `implement-spec`, `to-spec` + `to-tickets`, 19 Mantis micro-skills into `security-review`, `improve-codebase-architecture` into `codebase-design`), and removed CLI plugins, local issue-tracker setup, git hooks and personal experiments.
 
-Since then the set has grown to 27. Fourteen skills were written for work the original never covered: `deepen-prompt`, `skill-design` and `knowledge-curator` for sharpening prompts, skills and standing rules; `seo`, `landing-page-cro`, `pricing-and-paywalls`, `user-activation` and `product-analytics` for being found, converting and measuring; `legal-compliance` for privacy and consent; `mobile-native`, `break-ui`, `ui-motion` and `declutter-ui` for how the app feels and what it should not contain; and `codebase-audit` for keeping the code clean. `pr` was dropped along the way: Lovable writes the commit message and handles git.
+Since then the set has grown to 28. Fifteen skills were written for work the original never covered: `deepen-prompt`, `skill-design` and `knowledge-curator` for sharpening prompts, skills and standing rules; `seo`, `landing-page-cro`, `pricing-and-paywalls`, `user-activation` and `product-analytics` for being found, converting and measuring; `legal-compliance` for privacy and consent; `mobile-native`, `break-ui`, `ui-motion`, `declutter-ui` and `unslop-ui` for how the app feels and what it should not contain; and `codebase-audit` for keeping the code clean. `pr` was dropped along the way: Lovable writes the commit message and handles git.
 
 See [CHANGELOG.md](CHANGELOG.md) for the full list. The untouched original is preserved on the `backup/original` branch.
 
