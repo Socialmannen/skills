@@ -46,8 +46,9 @@ Before adding motion, test against user frequency:
 
 Consult [references/curves-and-durations.md](references/curves-and-durations.md) for complete spring configs and timing curves:
 
-- **Entrances (Decelerate / `ease-out`)**: Element enters quickly and brakes into position. Use `cubic-bezier(0.16, 1, 0.3, 1)`.
-- **Exits (Accelerate / `ease-in`)**: Element accelerates away so the user isn't kept waiting. Use `cubic-bezier(0.7, 0, 0.84, 0)`.
+- **Entrances (Decelerate / `ease-out`)**: Element enters quickly and brakes into position. Use `cubic-bezier(0.16, 1, 0.3, 1)`. Popovers start at scale `0.95` and expand from their trigger origin, not the screen center.
+- **Exits (Accelerate / `ease-in`)**: Make exits ~20% shorter than entrances (e.g. 150ms vs 200ms) with `cubic-bezier(0.7, 0, 0.84, 0)` so the user is never kept waiting.
+- **Tactile Button Press**: Scale interactive buttons to `0.97` (`active:scale-[0.97] duration-100`) on pointer-down for immediate tactile feedback.
 - **State Changes / Morphing**: Symmetrical smooth curve `cubic-bezier(0.65, 0, 0.35, 1)` or spring `{ stiffness: 400, damping: 32 }`.
 
 ```tsx

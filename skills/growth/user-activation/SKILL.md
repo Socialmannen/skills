@@ -23,6 +23,7 @@ Users who sign up but never reach the first "aha" leave quietly. Shorten the pat
 
 ## First-run onboarding
 
+- **Duolingo-style progression:** clear visual progress meter, bite-sized tasks leading directly to the first win, and immediate visual confirmation.
 - **Empty states teach:** every empty list shows what goes there and one button to create the first item. Optional sample data clearly marked and deletable.
 - **Getting-started checklist** of 3–5 steps leading to the activation moment, with progress, dismissible, stored per user.
 - **Do, don't tour:** prefer guiding the user to perform the real action over multi-step tooltip tours.
