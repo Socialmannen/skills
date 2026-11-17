@@ -1,6 +1,6 @@
 ---
 name: legal-compliance
-description: "Audits and implements legal and privacy requirements for a web app: privacy policy, terms of service, cookie consent, GDPR, third-party processors, accessibility (WCAG 2.2), AI disclosures, user content, subscriptions, email and SMS rules, health and children's data. Use when checking legal readiness or drafting policy pages. For technical launch checks, use the launch-checklist skill instead. Används när användaren behöver en integritetspolicy, användarvillkor, cookie-banner, GDPR-kontroll eller frågar om juridiska krav, samtycke, åldersgränser eller tillgänglighet."
+description: "Audits and implements legal and privacy requirements for a web app: privacy policy, terms of service, cookie consent, GDPR, third-party processors, accessibility (WCAG 2.2), AI disclosures, user content, subscriptions, email and SMS rules, health and children's data. Use when checking legal readiness, subscription flows, testimonial authenticity, or drafting policy pages. For technical launch checks, use the launch-checklist skill instead. Används när användaren behöver en integritetspolicy, användarvillkor, cookie-banner, GDPR-kontroll eller frågar om juridiska krav, samtycke, åldersgränser, kundomdömen, avsluta prenumeration eller tillgänglighet."
 ---
 
 # Legal Compliance

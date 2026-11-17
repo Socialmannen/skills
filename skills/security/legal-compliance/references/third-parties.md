@@ -7,6 +7,7 @@ From the launch readiness guide at https://ducktate.com/learn/launch-readiness/ 
 ## Checklist
 
 - [ ] Make a list of every third-party script, font, SDK and vendor your app loads, on every page and screen, with the personal data each one receives. [Must do] Sources: GDPR Art. 28 (https://gdpr-info.eu/art-28-gdpr/), OWASP Top 10:2025 (https://owasp.org/Top10/2025/)
+- [ ] Audit network traffic across client and server: inspect active network requests and background fetch calls to verify that every third-party domain receiving data (analytics, crash logs, marketing pixels, payment gateways, AI endpoints) is documented in the privacy policy and subprocessor list. [Must do] Sources: FTC enforcement on undisclosed third-party data sharing (https://www.ftc.gov/business-guidance/privacy-security), GDPR Art. 13 (https://gdpr-info.eu/art-13-gdpr/)
 - [ ] Remove each script or SDK on that list that you cannot give a clear reason for. [Should do] Sources: Munich Regional Court, 3 O 17493/20 (https://www.gesetze-bayern.de/Content/Document/Y-300-Z-GRURRS-B-2022-N-612)
 - [ ] Self-host your web fonts instead of loading them from Google's servers, especially if you have visitors in the EU. [Should do] Sources: Munich Regional Court, 3 O 17493/20 (https://www.gesetze-bayern.de/Content/Document/Y-300-Z-GRURRS-B-2022-N-612)
 - [ ] Sign or accept the data processing agreement of every vendor that handles your users' personal data, if the GDPR applies to you. [If it applies] Sources: GDPR Art. 28 (https://gdpr-info.eu/art-28-gdpr/)
